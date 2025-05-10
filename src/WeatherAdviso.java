@@ -1,15 +1,34 @@
+import java.util.Scanner;
+
 public class WeatherAdviso {
     public static void main(String[] args) {
-        for (int i = 1; i <= 100; i++) {
-            String resultado = "";
+        Scanner scanner = new Scanner(System.in);
 
-            if (i % 3 == 0) resultado += "Fizz";
-            if (i % 5 == 0) resultado += "Buzz";
+        System.out.print("Ingresa el número inicial: ");
+        int inicio = scanner.nextInt();
 
-            if (resultado.isEmpty()) {
-                System.out.printf("%3d : %3d%n", i, i);
+        System.out.print("Ingresa el número final: ");
+        int fin = scanner.nextInt();
+
+        for (int i = inicio; i <= fin; i++) {
+            System.out.printf("%3d : ", i);
+
+            if (i % 3 == 0 && i % 5 == 0 && i % 7 == 0) {
+                System.out.println("FizzBuzzBoom");
+            } else if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+            } else if (i % 3 == 0 && i % 7 == 0) {
+                System.out.println("FizzBoom");
+            } else if (i % 5 == 0 && i % 7 == 0) {
+                System.out.println("BuzzBoom");
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            } else if (i % 7 == 0) {
+                System.out.println("Boom");
             } else {
-                System.out.printf("%3d : %s%n", i, resultado);
+                System.out.println(i);
             }
         }
     }
